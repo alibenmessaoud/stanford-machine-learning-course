@@ -1,6 +1,4 @@
-# stanford-machine-learning-course
-
-Week 01
+# Week 01
 
 - Introduction
   - Wtf?
@@ -14,11 +12,5 @@ Week 01
     - Gradient descent for linear regression
 - Linear algebra
 
-
-
-Week 02
-
-- Linear regression with multiple variables
-- Octav/ Matlab usage
-
+------
 

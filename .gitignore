@@ -100,5 +100,15 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# ali
+syncit
+
+# coursera submit token
+token.mat
+
+
+
+
+
 # mypy
 .mypy_cache/
