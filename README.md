@@ -1,6 +1,6 @@
 # stanford-machine-learning-course
 
-Week 01
+### Week 01
 
 - Introduction
   - Wtf?
@@ -15,8 +15,7 @@ Week 01
 - Linear algebra
 
 
-
-Week 02
+### Week 02
 
 - Linear regression with multiple variables
 - Octav/ Matlab usage
