@@ -12,7 +12,7 @@
   - Parameter Learning
     - Gradient descent
     - Gradient descent for linear regression
-- Linear algebra
+- Linear algebra review
 
 
 ### Week 02

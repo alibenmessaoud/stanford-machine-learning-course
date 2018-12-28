@@ -106,9 +106,6 @@ syncit
 # coursera submit token
 token.mat
 
-
-
-
-
 # mypy
 .mypy_cache/
+
