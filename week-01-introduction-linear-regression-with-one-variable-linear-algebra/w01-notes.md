@@ -37,18 +37,18 @@ Right answers are given and task of algorithm is to produce more right answers.
 There's a relationship between the input and the output.
 
 - Example: 
-- **Beast cancer:**
+- Beast cancer:
   - It is called classification problem: label sizes to 1 for malignant or 0 for benign.
   - pTo Predict results in a discrete output.
   - → classification is about predicting a label.
-- **Housing price prediction:**
+- Housing price prediction:
   - It is called regression problem to predict continuous valued output (prices).
   - Price as a function of size is a continuous output.
   - Map input variables to some continuous function.
   - → regression is about predicting a quantity.
   - Can turn to into classification problem: output whether the house "sells for more or less than the asking price." 
   - Here we are classifying the houses based on price into two discrete categories.
-- **Age**
+- Age
   - Given a picture, predict the age.
 
 ### 3. Unsupervised ML
@@ -109,8 +109,6 @@ Intuition 1:
 - $\theta_1 = 2$       => $J(0) = 2.3$
 
   → Thus as a goal, try to minimize the cost function. In this case, $\theta_1 =1$  is the global minimum.
-
-
 
 ## III. Parameter learning
 ### 1. Gradient descent
