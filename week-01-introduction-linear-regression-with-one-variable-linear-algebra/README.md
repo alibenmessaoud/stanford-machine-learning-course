@@ -1,16 +1,6 @@
 # Week 01
 
-- Introduction
-  - Wtf?
-  - Supervised/ Unsupervised
-- Linear regression with one variable
-  - Model and Cost Function
-    - Model representation
-    - Cost function
-  - Parameter Learning
-    - Gradient descent
-    - Gradient descent for linear regression
-- Linear algebra
+[TOC]
 
 ------
 
@@ -102,9 +92,13 @@ Intuition 1:
   - Plot $h_\theta(x)$ and $ J(\theta_0, \theta_1)$ 
 
     > $\theta_1 = 0$       => $J(0) = 2.3$
+    >
     > $\theta_1 = 0.5$    => $J(0.5) = 0.58$
+    >
     > $\theta_1 = 1$       => $J(1) = 0$
+    >
     > $\theta_1 = 1.5$    => $J(1.5) = 0.58$
+    >
     > $\theta_1 = 2$       => $J(0) = 2.3$
 
 
@@ -122,23 +116,30 @@ Intuition 1:
 
 Algorithm:
 
-> repeat until convergence
+> repeat until convergence 
 > $\theta_j := \theta_j - \alpha \frac{d}{d\theta_j}J(\theta_0, \theta_1)$ 
+>
 > ​	for $j = 0$ and $j = 1$.
+>
 > ​	where $j$ is the feature index number.
+>
 > ​	hint: calculate values for 0, then for 1, at the end assign values to overwrite $\theta's$.
 
 In these examples, $J$ is based on the parameter $\theta_1$ 
 → The formula for a single parameter is : $\theta_1 := \theta_1 - \alpha\frac{d}{d\theta_1}J(\theta_1)$
 
 > Plotting the graphs of $J(\theta_1)$ show that when the slope is:
+>
 > ​	negative, the value of $\theta_1$ increases: $\frac{d}{d\theta_1}J(\theta_1) \le 0$
+>
 > ​	positive, the value of $\theta_1$ decreases: $\frac{d}{d\theta_1}J(\theta_1) \ge 0$
+>
 > ​	$\alpha$ is positive.
 
 Adjust $\alpha$  to ensure the convergence in a reasonable time.
 
 > if $\alpha$ is too small, gradient descent can be slow to go to the minimum.
+>
 > if $\alpha$ is too large, gradient descent can overshoot the minimum, or diverge.
 
 - How does gradient descent converge with a fixed step size $\alpha$?
@@ -156,8 +157,11 @@ Adjust $\alpha$  to ensure the convergence in a reasonable time.
 Algorithm:
 
 > repeat until convergence
-> $\theta_0 := \theta_0 - \alpha \frac{1}{m}\sum_{1..m}(h_\theta(x_i), y_i)$ 
-> $\theta_1 := \theta_1 - \alpha \frac{1}{m}\sum_{1..m}((h_\theta(x_i), y_i)x_i)$ 
+>
+> ​	$\theta_0 := \theta_0 - \alpha \frac{1}{m}\sum_{1..m}(h_\theta(x_i), y_i)$ 
+>
+> ​	$\theta_1 := \theta_1 - \alpha \frac{1}{m}\sum_{1..m}((h_\theta(x_i), y_i)x_i)$ 
+>
 > ​	$m$ is the size of training data
 
 Batch gradient descent:
@@ -173,3 +177,4 @@ Batch gradient descent:
   - “Scalar” means that an object is a single value, not a vector or matrix.
   - Matrices are not commutative: A∗B ≠ B∗A
   - Matrices are associative: (A∗B)∗C = A∗(B∗C)
+
