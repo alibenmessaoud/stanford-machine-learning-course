@@ -15,7 +15,7 @@
 ------
 
 ## I. Intro
-### 1. Defintions:
+### 1. Definitions:
   - Arthur Samuel, 59' => ML gives computer ability to learn without being explicitly programmed; 
   - Tom Mitchell, 98': a computer is said to learn from experience (E) with respect to task (T) and some performances (P), if its performances on T as measured on by (P) improves (E).
 - Example: 
