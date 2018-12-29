@@ -1,6 +1,16 @@
 # Week 01
 
-[TOC]
+- Introduction
+  - Wtf?
+  - Supervised/ Unsupervised
+- Linear regression with one variable
+  - Model and Cost Function
+    - Model representation
+    - Cost function
+  - Parameter Learning
+    - Gradient descent
+    - Gradient descent for linear regression
+- Linear algebra
 
 ------
 
