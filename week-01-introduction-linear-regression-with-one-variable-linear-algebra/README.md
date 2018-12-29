@@ -100,15 +100,15 @@ Intuition 1:
   - Ideally, the line should pass through all the points of our training data set to minimize $J(\theta_0, \theta_1)$.
   - $h_\theta(x)$ is plotted : a linear function passing through some points of the training set.
   - Plot $h_\theta(x)$ and $ J(\theta_0, \theta_1)$ 
-  - $\theta_1 = 0$       => $J(0) = 2.3$
-- $\theta_1 = 0.5$    => $J(0.5) = 0.58$
-  - $\theta_1 = 1$       => $J(1) = 0$
-  - $\theta_1 = 1.5$    => $J(1.5) = 0.58$
+
+    > $\theta_1 = 0$       => $J(0) = 2.3$
+    > $\theta_1 = 0.5$    => $J(0.5) = 0.58$
+    > $\theta_1 = 1$       => $J(1) = 0$
+    > $\theta_1 = 1.5$    => $J(1.5) = 0.58$
+    > $\theta_1 = 2$       => $J(0) = 2.3$
 
 
-- $\theta_1 = 2$       => $J(0) = 2.3$
-
-  → Thus as a goal, try to minimize the cost function. In this case, $\theta_1 =1$  is the global minimum.
+- → Thus as a goal, try to minimize the cost function. In this case, $\theta_1 =1$  is the global minimum.
 
 ## III. Parameter learning
 ### 1. Gradient descent
@@ -117,6 +117,59 @@ Intuition 1:
 - **Outline**
   - Start with some $\theta_0, \theta_1$.
   - Keep changing $\theta_0, \theta_1$ to reduce $J(\theta_0, \theta_1)$ to find up a minimum.
-
 - Estimate the parameters in the hypothesis function → Gradient descent
 
+
+Algorithm:
+
+> repeat until convergence
+> $\theta_j := \theta_j - \alpha \frac{d}{d\theta_j}J(\theta_0, \theta_1)$ 
+> ​	for $j = 0$ and $j = 1$.
+> ​	where $j$ is the feature index number.
+> ​	hint: calculate values for 0, then for 1, at the end assign values to overwrite $\theta's$.
+
+In these examples, $J$ is based on the parameter $\theta_1$ 
+→ The formula for a single parameter is : $\theta_1 := \theta_1 - \alpha\frac{d}{d\theta_1}J(\theta_1)$
+
+> Plotting the graphs of $J(\theta_1)$ show that when the slope is:
+> ​	negative, the value of $\theta_1$ increases: $\frac{d}{d\theta_1}J(\theta_1) \le 0$
+> ​	positive, the value of $\theta_1$ decreases: $\frac{d}{d\theta_1}J(\theta_1) \ge 0$
+> ​	$\alpha$ is positive.
+
+Adjust $\alpha$  to ensure the convergence in a reasonable time.
+
+> if $\alpha$ is too small, gradient descent can be slow to go to the minimum.
+> if $\alpha$ is too large, gradient descent can overshoot the minimum, or diverge.
+
+- How does gradient descent converge with a fixed step size $\alpha$?
+  - The intuition behind the convergence is that $\frac{d}{d\theta_1} J(\theta_1)$ approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get: $\theta_1:=\theta_1-\alpha*0$
+- Facts:
+  - To make gradient descent converge, we must slowly decrease $\alpha$ over time.
+  - Gradient descent is guaranteed to find the global minimum for any function $J(\theta_0, \theta_1)$.
+  - Gradient descent can converge even if \alphaα is kept fixed. (But \alphaα cannot be too large, or else it may fail to converge.)
+  - For the specific choice of cost function $J(\theta_0, \theta_1)$ used in linear regression, there are no local optima (other than the global optimum).
+
+### Gradient descent for linear regression:
+
+- replace $J$ by its value in the algorithm:
+
+Algorithm:
+
+> repeat until convergence
+> $\theta_0 := \theta_0 - \alpha \frac{1}{m}\sum_{1..m}(h_\theta(x_i), y_i)$ 
+> $\theta_1 := \theta_1 - \alpha \frac{1}{m}\sum_{1..m}((h_\theta(x_i), y_i)x_i)$ 
+> ​	$m$ is the size of training data
+
+Batch gradient descent:
+
+- Each step of gradient descent uses all the training examples.
+
+## IV. Linear Algebra
+
+- Matrices are 2-dimensional arrays
+  - A vector is a matrix with one column and many rows
+  - 1-indexed or 0-indexed
+  - Matrices are usually denoted by uppercase names while vectors are lowercase.
+  - “Scalar” means that an object is a single value, not a vector or matrix.
+  - Matrices are not commutative: A∗B ≠ B∗A
+  - Matrices are associative: (A∗B)∗C = A∗(B∗C)
