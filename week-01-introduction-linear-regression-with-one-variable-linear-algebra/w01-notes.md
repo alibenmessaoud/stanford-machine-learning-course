@@ -40,12 +40,12 @@ There's a relationship between the input and the output.
 - **Beast cancer:**
   - It is called classification problem: label sizes to 1 for malignant or 0 for benign.
   - pTo Predict results in a discrete output.
-  - => classification is about predicting a label.
+  - → classification is about predicting a label.
 - **Housing price prediction:**
   - It is called regression problem to predict continuous valued output (prices).
   - Price as a function of size is a continuous output.
   - Map input variables to some continuous function.
-  - => regression is about predicting a quantity.
+  - → regression is about predicting a quantity.
   - Can turn to into classification problem: output whether the house "sells for more or less than the asking price." 
   - Here we are classifying the houses based on price into two discrete categories.
 - **Age**
@@ -97,5 +97,28 @@ Such as in our housing example, we call the learning problem a regression proble
 - Goal: $minimize J(\theta_0, \theta_1)$
 
 Intuition 1:
-  - Ideally, the line should pass through all the points of our training data set to minimize $J(\theta_0, \theta_1)​$.
-  - $\theta_1 = 1$ => J(1) = 0
+  - Ideally, the line should pass through all the points of our training data set to minimize $J(\theta_0, \theta_1)$.
+  - $h_\theta(x)$ is plotted : a linear function passing through some points of the training set.
+  - Plot $h_\theta(x)$ and $ J(\theta_0, \theta_1)$ 
+  - $\theta_1 = 0$       => $J(0) = 2.3$
+- $\theta_1 = 0.5$    => $J(0.5) = 0.58$
+  - $\theta_1 = 1$       => $J(1) = 0$
+  - $\theta_1 = 1.5$    => $J(1.5) = 0.58$
+
+
+- $\theta_1 = 2$       => $J(0) = 2.3$
+
+  → Thus as a goal, try to minimize the cost function. In this case, $\theta_1 =1$  is the global minimum.
+
+
+
+## III. Parameter learning
+### 1. Gradient descent
+- Have some function $J(\theta_0, \theta_1)$
+- Want to $minimize J(\theta_0, \theta_1)$
+- **Outline**
+  - Start with some $\theta_0, \theta_1$.
+  - Keep changing $\theta_0, \theta_1$ to reduce $J(\theta_0, \theta_1)$ to find up a minimum.
+
+- Estimate the parameters in the hypothesis function → Gradient descent
+
