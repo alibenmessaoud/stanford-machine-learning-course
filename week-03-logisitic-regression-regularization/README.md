@@ -99,30 +99,75 @@ Note that writing the cost function in this way guarantees that J(θ) is convex 
 
 ##### b. Simplified Cost Function and Gradient Descent
 
+###### i. Cost function
+
 We can compress our cost function's two conditional cases into one case:
 
-​	$Cost(h\theta(x),y)=−ylog(h\theta(x))−(1−y)log(1−h\theta(x))$ 
+​	$Cost(h_\theta(x),y)=−ylog(h\theta(x))−(1−y)log(1−h\theta(x))$ 
 
 ​	When $y=0$ or $y =1$ then one of the latter parts will be zero;
 
- Full cost function:
+ Full logistic regression cost function:
 
-​	$J(θ)=−\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_\theta(x^{(i)}))+(1−y^{(i)})log(1−h_\theta(x^{(i)}))]$
+​	$J(θ)=\frac{1}{m}\sum_{i=1}^{m}[-y^{(i)}log(h_\theta(x^{(i)})) - (1−y^{(i)})log(1−h_\theta(x^{(i)}))]$
+
+​	So minimize $J(\theta)$ 
 
 A vectorized implementation is:
 
 ​	$h=g(X\theta)$
 
-​	$J(θ)=1m⋅(−y^Tlog(h)−(1−y)^Tlog(1−h))$
+​	$J(θ)=1/m⋅(−y^Tlog(h)−(1−y)^Tlog(1−h))$
+
+###### ii. Gradient Descent
+
+Remember that the general form of gradient descent is:
+
+​	Minimize $J(\theta)$ : Repeat { $\theta_j:=\theta_j−\alpha \frac{d}{d\theta_j}J(\theta)$ }
+
+​	$\frac{d}{d\theta_j} J(\theta) = 1/m \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$ 
+
+​	where $h_\theta(x) = \frac{1}{1+e^{-\theta^TX}}$
+
+​	Repeat { $\theta_j := \theta_j−\frac{\alpha}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$  }
+
+This algorithm is identical to the one we used in linear regression (where $h_\theta(x) = \theta^Tx$). Simultaneously update all values in $\theta$.
+
+A vectorized implementation is: $\theta := \theta−\frac{\alpha}{m}X^T(g(X\theta)-y)$ 
+
+##### c. Advanced optimization 
+
+Cost function $J(\theta)$ and want to min $J(\theta)$ so do gradient descent as we have $\frac{d}{d\theta_j}J(\theta)$. 
+
+Optimization algorithms:
+
+1. Gradient descent
+2. Conjugate gradient
+3. BFGS
+4. L-BFGS
+
+With the 3 latter ones, no to $\alpha$, fatser and more complex
+
+Example: 
+
+$\theta = \begin{bmatrix} \theta_1 \\ \theta_2  \end{bmatrix}; J(\theta) = (\theta_1-5)^2-(\theta_2-5)^2$
+
+$\frac{d}{d\theta_1}J(\theta) = 2(\theta_2 - 5); \frac{d}{d\theta_2}J(\theta) = 2(\theta_1 - 5)$ 
+
+```matlab
+function [jVal, gradient] = costFn
+	jVal = (theta(1) - 5)^2 + (theta(2) - 5)^2
+    gradient = zeros(2, 1)
+    gradient(1) = 2*(theta(1) - 5)
+    gradient(2) = 2*(theta(2) - 5)
+    
+options = optimset('GradObj', 'on', 'MaxIter', 100);
+initialTheta = zeros(2,1);
+   [optTheta, functionVal, exitFlag] = fminunc(@costFn, initialTheta, options);
+```
+
+### Multiclass classification
 
 
 
-Gradient Descent
-
-​	Remember that the general form of gradient descent is:
-
-​	Repeat{
-
-​		$\theta_j:=\theta_j−\alpha \frac{d}{d\theta_j}J(\theta)$
-
-​	}
+## II. Regularization
