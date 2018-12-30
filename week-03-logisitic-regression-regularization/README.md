@@ -101,3 +101,28 @@ Note that writing the cost function in this way guarantees that J(θ) is convex 
 
 We can compress our cost function's two conditional cases into one case:
 
+​	$Cost(h\theta(x),y)=−ylog(h\theta(x))−(1−y)log(1−h\theta(x))$ 
+
+​	When $y=0$ or $y =1$ then one of the latter parts will be zero;
+
+ Full cost function:
+
+​	$J(θ)=−\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}log(h_\theta(x^{(i)}))+(1−y^{(i)})log(1−h_\theta(x^{(i)}))]$
+
+A vectorized implementation is:
+
+​	$h=g(X\theta)$
+
+​	$J(θ)=1m⋅(−y^Tlog(h)−(1−y)^Tlog(1−h))$
+
+
+
+Gradient Descent
+
+​	Remember that the general form of gradient descent is:
+
+​	Repeat{
+
+​		$\theta_j:=\theta_j−\alpha \frac{d}{d\theta_j}J(\theta)$
+
+​	}
