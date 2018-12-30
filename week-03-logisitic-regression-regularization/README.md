@@ -188,6 +188,43 @@ We are basically choosing one class and then lumping all the others into a singl
 
 ## II. Regularization
 
+### 1. The problem of overfitting
+
+Example: Housing prices using linear regression
+
+- $\theta_0 + \theta_1x$ called underfit or high bias
+
+- $\theta_0 + \theta_1x + \theta_2x^2 $ called just right
+
+- $\theta_0 + \theta_1x + \theta_2x^2 + \theta_3x^3 + \theta_4x^4$ called overfit or high variance 
+
+  Plotted pass near the points
+
+  $\Rightarrow$ Overfit = many features + the learned hypothesis fit the training set ($J(\theta) \approx0$) + fail to fit new examples.
+
+  $j(\theta) = 1/2m \sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2$
+
+Example: Logistic regression 
+
+- $h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2x_2)$ called underfit
+
+- $h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_1^2 +..)$
+
+- $h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_1^2 +.. + .. )$
+
+  Plotted create a boundary between points of 2 or more classes 
+
+Address overfitting:
+
+1. Reduce number of features
+   - Manually select which features to keep 
+
+### 2. Cost function
+
+### 3. Regularized Linear regression
+
+
+
 
 
 

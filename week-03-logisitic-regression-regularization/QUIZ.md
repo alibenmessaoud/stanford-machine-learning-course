@@ -106,3 +106,9 @@ Which of the following statements are true? Check all that apply.
 Suppose you train a logistic classifier h_\theta(x) = g(\theta_0 + \theta_1x_1 + \theta_2 x_2)hθ(x)=g(θ0+θ1x1+θ2x2). Suppose \theta_0 = - 6, \theta_1 = 1, \theta_2 = 0θ0=−6,θ1=1,θ2=0. Which of the following figures represents the decision boundary found by your classifier?
 
 x1 >= 6 when y= 1
+
+------
+
+Consider the medical diagnosis problem of classifying tumors as malignant or benign. If a hypothesis h_\theta(x)hθ(x) has overfit the training set, it means that:
+
+It makes accurate predictions for examples in the training set, but it does not generalize well to make accurate predictions on new, previously unseen examples
