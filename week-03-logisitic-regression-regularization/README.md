@@ -216,8 +216,12 @@ Example: Logistic regression
 
 Address overfitting:
 
-1. Reduce number of features
+1. Reduce number of features:
    - Manually select which features to keep 
+   - Model selection algorithm
+2. Regularization:
+   - Keep all features but reduce values of $\theta_j$ 
+   - Regularization works well when we have a lot of slightly useful features.
 
 ### 2. Cost function
 
