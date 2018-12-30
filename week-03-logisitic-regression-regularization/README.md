@@ -187,3 +187,8 @@ $prediction=max_i(h^{(i)}_\theta(x))$
 We are basically choosing one class and then lumping all the others into a single second class. Repeat this. Apply binary logistic regression to each case, and then use the hypothesis that returned the highest value as our prediction.
 
 ## II. Regularization
+
+
+
+
+
