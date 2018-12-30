@@ -111,4 +111,14 @@ x1 >= 6 when y= 1
 
 Consider the medical diagnosis problem of classifying tumors as malignant or benign. If a hypothesis h_\theta(x)hθ(x) has overfit the training set, it means that:
 
-It makes accurate predictions for examples in the training set, but it does not generalize well to make accurate predictions on new, previously unseen examples
+It makes accurate predictions for examples in the training set, but it does not generalize well to make accurate predictions on new, previously unseen examples.
+
+------
+
+In regularized linear regression, we choose $\theta$ to minimize:
+
+$J(θ)=1/2m[\sum_{i=1}^{m}(h_\theta(x^{(i)})−y^{(i)})^2+ \lambda \sum_{j=1}{n}\theta_j^2]$ 
+
+What if $\lambda$ is set to an extremely large value (perhaps too large for our problem, say $\lambda=10^{10}$)?
+
+Algorithm results in underfitting (fails to fit even the training set).

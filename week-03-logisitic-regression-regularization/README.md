@@ -225,11 +225,64 @@ Address overfitting:
 
 ### 2. Cost function
 
+If we have overfitting from our hypothesis function, we can reduce the weight that some of the terms in our function carry by increasing their cost. 
+
+Say we wanted to make the following function more quadratic: $\theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3+ \theta_4x_4$ 
+
+We want to eliminate the influence of $\theta_3x_3+ \theta_4x_4$: $\Rightarrow$ modify our **cost function**
+
+min $\theta 1/2m \sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2 + 1000 \theta_3^2 + 1000 \theta_4^2$ 
+
+The formula becomes: $J(θ)=1/2m[\sum_{i=1}^{m}(h_\theta(x^{(i)})−y^{(i)})^2+ \lambda \sum_{j=1}^{n}\theta_j^2]$  
+
+The lambda, is the **regularization parameter**. It determines how much the costs of our theta parameters are inflated.  
+
 ### 3. Regularized Linear regression
 
+#### Gradient Descent
 
+We will modify our gradient descent function to separate out $\theta_0$ from the rest of the parameters because we do not want to penalize $ \theta_0$.
 
+Repeat {
 
+​	$\theta_0 := \theta_0 - \alpha/m \sum_{i=1}^{m}h_\theta(x^{(i)} - y^{(i)})x_0^{(i)}$
+​	$\theta_j := \theta_j - \alpha [(1/m \sum_{i=1}^{m}h_\theta(x^{(i)} - y^{(i)})x_j^{(i)}	) + \lambda /m . \theta_j ]$
+​	$j\in 1..n$ 
 
+}
 
+The term $\lambda /m . \theta_j $ performs the regulation. With some manipulation $\theta_j := \theta_j(1 - \alpha \lambda/m) - \alpha ... $ 
 
+ The first part will be always less than 1. So reducing $\theta_j $ by some amount on every update gives as the same second part as before. 
+
+#### Normal Equation
+
+Use the non-iterative normal equation. To add in regularization, the equation is the same as our original, except that we add another term inside the parentheses:
+
+$\theta = (X^TX + \lambda L)^{-1}X^Ty$ where L = $\begin{bmatrix} 0 && \\ &1 & \\ && ..1 \end{bmatrix}$ 
+
+L is a matrix with 0 at the top left and 1's down the diagonal, with 0's everywhere else. 
+
+### 4. Regularized logistic regression 
+
+We can regularize logistic regression in a similar way that we regularize linear regression.
+
+As a result, we can avoid overfitting. 
+
+Recall that our cost function for logistic regression was:
+
+$J(\theta) = - \frac{1}{m} \sum_{i=1}^m \large[ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))]$
+
+We can regularize this equation by adding a term to the end:
+
+$J(\theta) = - \frac{1}{m} \sum_{i=1}^m \large[ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m} \sum_{j=1}^{n}\theta_j^²$ 
+
+The sum in the added term means to explicitly exclude the bias term $\theta_0$. So the gradient will be like: 
+
+Repeat {
+
+​	$\theta_0 := \theta_0 - \alpha/m \sum_{i=1}^{m}h_\theta(x^{(i)} - y^{(i)})x_0^{(i)}$
+​	$\theta_j := \theta_j - \alpha [(1/m \sum_{i=1}^{m}h_\theta(x^{(i)} - y^{(i)})x_j^{(i)}	) + \lambda /m . \theta_j ]$
+​	$j\in 1..n$ 
+
+}
