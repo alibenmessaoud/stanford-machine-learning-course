@@ -22,3 +22,12 @@
   - Computing Parameters Analytically
 - Octav/ Matlab usage
 
+
+### Week 03
+
+- Logistic Regression
+  - Classification and Representation
+  - Logistic Regression Model
+  - Multiclass Classification
+- Regularization
+  - Solving the Problem of Overfitting
