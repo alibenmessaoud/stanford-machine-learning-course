@@ -166,8 +166,24 @@ initialTheta = zeros(2,1);
    [optTheta, functionVal, exitFlag] = fminunc(@costFn, initialTheta, options);
 ```
 
-### Multiclass classification
+### 3. Multiclass classification
 
+Instead of y = {0,1} we will expand our definition so that y = {0,1...n}.
 
+Since y = {0,1...n}, we divide our problem into n+1 binary classification problems; in each one, we predict the probability that 'y' is a member of one of our classes.
+
+$y \in{0,1...n}$
+
+$h^{(0)}_\theta(x)=P(y=0|x; \theta)$
+
+$h^{(1)}_\theta(x)=P(y=1|x; \theta)$ 
+
+...
+
+$h^{(n)}_\theta(x)=P(y=n|x; \theta)$
+
+$prediction=max_i(h^{(i)}_\theta(x))$ 
+
+We are basically choosing one class and then lumping all the others into a single second class. Repeat this. Apply binary logistic regression to each case, and then use the hypothesis that returned the highest value as our prediction.
 
 ## II. Regularization
