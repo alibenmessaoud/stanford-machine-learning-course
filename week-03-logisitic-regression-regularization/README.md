@@ -72,3 +72,32 @@
     $\Rightarrow$ Decision boundary is a straight vertical line placed on the graph where $x_1 = 5$; at left $y = 1$; at right $y = 0$;
   - note: sigmoid function g(z)
 
+### 2. Logistic regression
+##### a. Cost function
+
+Cannot use the same cost function like in linear regression; Logistic function will cause the output to be wavy, causing many local optima so it will not be a convex function.
+
+$J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)})$
+$Cost(h_\theta(x),y) = -\log(h_\theta(x)); \text{if y = 1}$
+$Cost(h_\theta(x),y) = -\log(1-h_\theta(x)); \text{if y = 0}$
+
+> When y = 1, we get the following plot for $J(\theta)$ vs $h_\theta (x)$: 
+>
+> - 0 → $+\infty$
+> - 1 → $\approx0$
+
+> When y = 0, we get the following plot for $J(\theta)$ vs $h_\theta (x)$: 
+>
+> - 0 → 0
+> - 1 → $+\infty$
+
+$$Cost(h_\theta(x),y) = 0 h_\theta(x) = y$$
+$Cost(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \text{and} \; h_\theta(x) \rightarrow 1$
+$Cost(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \text{and} \; h_\theta(x) \rightarrow 0$
+
+Note that writing the cost function in this way guarantees that J(θ) is convex for logistic regression.
+
+##### b. Simplified Cost Function and Gradient Descent
+
+We can compress our cost function's two conditional cases into one case:
+
