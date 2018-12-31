@@ -18,10 +18,19 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+h = sigmoid(X * theta)
 
+theta = [0 ; theta(2:size(theta), :)]
 
+J = 1/m * sum(-y' * log(h) - (1 - y') * log(1-h)) + lambda/(2*m) * sum(theta.^2);
+
+grad = 1/m * ((h - y)'*X + lambda * theta);
 
 
 % =============================================================
 
 end
+
+
+% Cost at initial theta (zeros): 0.693147
+% Expected cost (approx): 0.693
