@@ -31,3 +31,9 @@
   - Multiclass Classification
 - Regularization
   - Solving the Problem of Overfitting
+
+### Week 04
+
+- Motivations
+- Neural Networks
+- Applications
