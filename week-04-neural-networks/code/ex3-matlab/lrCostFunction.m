@@ -37,12 +37,16 @@ grad = zeros(size(theta));
 %
 
 
+% cost function h using g:
+h = sigmoid(X*theta);
 
+% exclude the first theta value and set it to 0:
+theta = [0; theta(2:end, :)];
 
+J = 1/m * ((-y)'*log(h) - (1 - y)' * log(1 - h)) + lambda / (2 * m) * (theta' * theta);
 
-
-
-
+% calculate grad:
+grad = (X' * (h - y) + lambda * theta) / m;
 
 
 % =============================================================

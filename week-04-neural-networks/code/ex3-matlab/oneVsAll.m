@@ -34,33 +34,44 @@ X = [ones(m, 1) X];
 %       fmincg works similarly to fminunc, but is more efficient when we
 %       are dealing with large number of parameters.
 %
+
+  for i = 1:num_labels
 % Example Code for fmincg:
 %
 %     % Set Initial theta
 %     initial_theta = zeros(n + 1, 1);
+      initial_theta = zeros(n + 1, 1);
 %     
 %     % Set options for fminunc
 %     options = optimset('GradObj', 'on', 'MaxIter', 50);
+      options = optimset('GradObj', 'on', 'MaxIter', 50);
 % 
 %     % Run fmincg to obtain the optimal theta
 %     % This function will return theta and the cost 
 %     [theta] = ...
 %         fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), ...
 %                 initial_theta, options);
+      [theta] = fmincg(@(t)(lrCostFunction(t, X, (y == i), lambda)), initial_theta, options);
 %
-
-
-
-
-
-
-
-
-
-
-
+%     Return all_theta
+      all_theta(i, :) = theta';
+  end
 
 % =========================================================================
 
 
 end
+
+%{
+Training One-vs-All Logistic Regression...
+Iteration    50 | Cost: 1.387304e-02
+Iteration    50 | Cost: 5.725253e-02
+Iteration    50 | Cost: 6.415590e-02
+Iteration    50 | Cost: 3.598165e-02
+Iteration    50 | Cost: 6.180208e-02
+Iteration    50 | Cost: 2.224919e-02
+Iteration    50 | Cost: 3.448274e-02
+Iteration    50 | Cost: 8.541680e-02
+Iteration    50 | Cost: 7.970735e-02
+Iteration    50 | Cost: 1.010870e-02
+%}

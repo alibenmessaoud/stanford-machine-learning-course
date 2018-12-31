@@ -30,13 +30,22 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+%{
+For each input, you should compute the
+“probability” that it belongs to each class using the trained logistic regression
+classifiers. Your one-vs-all prediction function will pick the class for which the
+corresponding logistic regression classifier outputs the highest probability and
+return the class label (1, 2,..., or K) as the prediction for the input example.
+%}
 
+predictions = sigmoid(X * all_theta');
 
+[prediction_max, prediction_index] = max(predictions, [], 2);
 
-
-
+p = prediction_index; 
 
 % =========================================================================
 
+% Training Set Accuracy: 95.040000
 
 end
