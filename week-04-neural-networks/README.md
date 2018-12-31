@@ -154,4 +154,3 @@ We can define our set of resulting classes as $y$. Each $y^{(i)}$ represents a d
 The inner layers, each provide us with some new information which leads to our final hypothesis function. The setup looks like:
 
 $\begin{bmatrix}x_0\\..\\x_n\end{bmatrix} \rightarrow \begin{bmatrix}a_1^{2}\\a_0^{2}\\..\end{bmatrix}  \rightarrow .. \rightarrow \begin{bmatrix}h_\Theta(x)_1 \\..\\h_\Theta(x)_4\end{bmatrix}$
-
