@@ -20,13 +20,33 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+h = sigmoid(X * theta)
 
+J = 1/m * sum(-y' * log(h) - (1 - y') * log(1-h));
 
-
-
-
+grad = 1/m * (h - y)'*X
 
 
 % =============================================================
 
 end
+
+
+%{ 
+
+grad =
+
+   -0.10000  -12.00922  -11.26284
+
+Cost at initial theta (zeros): 0.693147
+Expected cost (approx): 0.693
+Gradient at initial theta (zeros):
+ -0.100000
+ -12.009217
+ -11.262842
+Expected gradients (approx):
+ -0.1000
+ -12.0092
+ -11.2628
+
+%}
