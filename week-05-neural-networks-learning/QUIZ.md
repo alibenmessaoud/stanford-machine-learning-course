@@ -16,3 +16,42 @@ FP using $x^{(1)}x(1)$ followed by BP using $y^{(1)}y(1)$. Then FP using $x^{(2)
 
 ------
 
+Suppose D1 is a 10x6 matrix and D2 is a 1x11 matrix. You set:DVec = [D1(:); D2(:)];Which of the following would get D2 back from DVec?
+
+reshape(DVec(60:71), 1, 11)
+
+reshape(DVec(61:72), 1, 11)
+
+reshape(DVec(61:71), 1, 11)
+
+Correct 
+
+reshape(DVec(60:70), 11, 1)
+
+------
+
+Let $J(\theta) = \theta^3$. Furthermore, let $\theta = 1$ and $\epsilon = 0.01$. You use the formula:$\frac{J(\theta+\epsilon) - J(\theta - \epsilon)}{2\epsilon}$ to approximate the derivative. What value do you get using this approximation? (When $\theta = 1$, the true, exact derivative is $\frac{d}{d\theta}J(\theta)=3$.
+
+3.0000
+
+3.0001
+
+Correct 
+
+3.0301
+
+6.0002
+
+------
+
+What is the main reason that we use the backpropagation algorithm rather than the numerical gradient computation method during learning?
+
+The numerical gradient computation method is much harder to implement.
+
+The numerical gradient algorithm is very slow.
+
+Correct 
+
+Backpropagation does not require setting the parameter EPSILON.
+
+None of the above.

@@ -89,7 +89,56 @@ Neural Networks: Learning
 
 #### 1. Implementation
 
+With neural networks, we are working with sets of matrices:
+
+- $\Theta^{(1)}, \Theta^{(2)},…$ 
+- $D(1), D(2), …$
+
+In order to use optimizing functions such as "fminunc()", we will want to "unroll" all the elements and put them into one long vector: 
+
+```
+thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]
+deltaVector = [ D1(:); D2(:); D3(:) ]
+```
+
+If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11, then we can get back our original matrices from the "unrolled" versions as follows:
+
+```
+Theta1 = reshape(thetaVector(1:110),10,11)
+Theta2 = reshape(thetaVector(111:220),10,11)
+Theta3 = reshape(thetaVector(221:231),1,11)
+```
+
+![./img/algonnimpl.png](./img/algonnimpl.png)
+
 #### 2. Gradient checking
+
+Gradient checking will assure that our backpropagation works as intended. We can approximate the derivative of our cost function with:
+
+$\dfrac{\partial}{\partial\Theta}J(\Theta) \approx \dfrac{J(\Theta + \epsilon) - J(\Theta - \epsilon)}{2\epsilon}$  
+
+With multiple theta matrices, we can approximate the derivative **with respect to** $Θ_j$ as follows:
+
+$\dfrac{\partial}{\partial\Theta_j}J(\Theta) \approx \dfrac{J(\Theta_1, \dots, \Theta_j + \epsilon, \dots, \Theta_n) - J(\Theta_1, \dots, \Theta_j - \epsilon, \dots, \Theta_n)}{2\epsilon}  $
+
+A small value for ${\epsilon}$ (epsilon) such as ${\epsilon = 10^{-4}}$, guarantees that the math works out properly. If the value for $\epsilon$ is too small, we can end up with numerical problems.
+
+Hence, we are only adding or subtracting epsilon to the $\Theta_j$ matrix. In octave we can do it as follows:
+
+```
+epsilon = 1e-4;
+for i = 1:n,
+  thetaPlus = theta;
+  thetaPlus(i) += epsilon;
+  thetaMinus = theta;
+  thetaMinus(i) -= epsilon;
+  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)
+end;
+```
+
+We previously saw how to calculate the deltaVector. So once we compute our gradApprox vector, we can check that gradApprox ≈ deltaVector.
+
+Once you have verified **once** that your backpropagation algorithm is correct, you don't need to compute gradApprox again. The code to compute gradApprox can be very slow.
 
 #### 3. Random initialization
 
