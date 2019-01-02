@@ -55,3 +55,36 @@ Correct
 Backpropagation does not require setting the parameter EPSILON.
 
 None of the above.
+
+------
+
+Consider this procedure for initializing the parameters of a neural network:
+
+1. Pick a random number r = rand(1,1) * (2 * INIT_EPSILON) - INIT_EPSILON;
+2. Set $\Theta_{ij}^{(l)}$ = $r$ for all $i,j,l $
+
+Does this work?
+
+Yes, because the parameters are chosen randomly.
+
+Yes, unless we are unlucky and get r=0 (up to numerical precision).
+
+Maybe, depending on the training set inputs x(i).
+
+No, because this fails to break symmetry.
+
+Correct 
+
+------
+
+Suppose you are using gradient descent together with backpropagation to try to minimize $J(\Theta)$ as a function of $\Theta$. Which of the following would be a useful step for verifying that the learning algorithm is running correctly?
+
+Plot $J(\Theta)$ as a function of $\Theta$, to make sure gradient descent is going downhill.
+
+Plot $J(\Theta)$ as a function of the number of iterations and make sure it is increasing (or at least non-decreasing) with every iteration.
+
+Plot $J(\Theta)$ as a function of the number of iterations and make sure it is decreasing (or at least non-increasing) with every iteration.
+
+Correct 
+
+Plot $J(\Theta)$ as a function of the number of iterations to make sure the parameter values are improving in classification accuracy.

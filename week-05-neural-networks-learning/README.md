@@ -142,6 +142,51 @@ Once you have verified **once** that your backpropagation algorithm is correct, 
 
 #### 3. Random initialization
 
+Initializing all theta weights to zero does not work with neural networks. When we backpropagate, all nodes will update to the same value repeatedly. Instead we can randomly initialize our weights for our $\Theta$ matrices using the following method $\Rightarrow$ Symmetry breaking: init each $\Theta_{ij}^{(l)}$ to a random value in $[-epsilon, +epsilon]$
+
+```matlab
+If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.
+
+Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
+Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
+Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
+```
+
 #### 4. Summary
+
+Do NN?
+
+- Pick a network architecture and a layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.
+  - Number of input units = dimension of features $x^{(i)}$
+  - Number of output units = number of classes = $\begin{bmatrix} 1 \\ .. \\ n \end{bmatrix}$
+  - Number of hidden units per layer 
+  - Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer. 
+
+
+
+**Training a Neural Network**
+
+1. Randomly initialize the weights
+2. Implement forward propagation to get $h_\Theta(x^{(i)})$ for any $x^{(i)}$
+3. Implement the cost function
+4. Implement backpropagation to compute partial derivatives
+5. Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.
+6. Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.
+
+When we perform forward and back propagation, we loop on every training example:
+
+```
+for i = 1:m,
+   Perform forward propagation and backpropagation using example (x(i),y(i))
+   (Get activations a(l) and delta terms d(l) for l = 2,...,L
+```
+
+
+
+![./img/nnoptsgrd.png](./img/nnoptsgrd.png)
+
+The cost function $J(\Theta)$ measures how well the neural network fits the training data.
+
+Maximum: $h_\Theta(x^{(i)})$ far from $y^{(i)}$; Minimum: $h_\Theta(x^{(i)})$ $\approx$ $y^{(i)}$ and $J(\Theta)$ is low; Gradient will go the the minimum;
 
 ### III. Application of Neural Networks
