@@ -82,11 +82,53 @@ end
 
 J = 1/m * sum(sum(-yk .* log(h_theta) -(1-yk) .* log(1 - h_theta)))
 
+%% You should see that the cost is about 0.287629
+%% Feedforward Using Neural Network ...
+%% J =  0.28763
+
+% Note: should not be regularizing the terms that correspond to the bias.
+nbColOfTheta1 = size(Theta1, 2);
+nbColOfTheta2 = size(Theta2, 2);
+th1 = Theta1(:, 2: nbColOfTheta1);
+th2 = Theta2(:, 2: nbColOfTheta2);
+
+% regularization formula
+regularized = lambda/(2 * m) * (sum(sum(th1 .* th1)) + sum(sum(th2 .* th2)));
+J = J + regularized;
+
+% You should see that the cost is about 0.383770.
+% Cost at parameters (loaded from ex4weights): 0.383770
 
 
+% -------------------------------------------------------------
 
 
-
+for t = 1:m
+  
+  
+  a1 = X;
+  a1 = [ones(m,1) a1];
+  
+  z2 = Theta1 * a1';
+  a2 = sigmoid(z2);
+  a2 = [ones(m,1) a2'];
+  
+  z3 = Theta2 * a2';
+  a3 = sigmoid(z3);
+  
+  % δ3k = (a3k − yk),
+  delta3 = a3 - yk(:, t);
+  
+  % δ(2) = Θ(2)T * δ(3) .∗ g'(z(2))
+  delta2 = (Theta2 * delta3)' .* sigmoidGradient(z2);
+  
+  %Accumulate the gradient from this example using the following formula.
+  delta2 = delta2(2:end);
+  
+  Theta1_grad = Theta1_grad + delta2 * a1;
+  Theta2_grad = Theta2_grad + delta3 * a2';
+  
+endfor
 
 
 % -------------------------------------------------------------
