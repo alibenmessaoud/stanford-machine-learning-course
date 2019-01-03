@@ -105,9 +105,9 @@ J = J + regularized;
 
 for t = 1:m
   
-  
   a1 = X;
   a1 = [ones(m,1) a1];
+  a1 = [1 ; a1]
   
   z2 = Theta1 * a1';
   a2 = sigmoid(z2);
@@ -120,7 +120,7 @@ for t = 1:m
   delta3 = a3 - yk(:, t);
   
   % δ(2) = Θ(2)T * δ(3) .∗ g'(z(2))
-  delta2 = (Theta2 * delta3)' .* sigmoidGradient(z2);
+  delta2 = (Theta2 * delta3) .* sigmoidGradient(z2);
   
   %Accumulate the gradient from this example using the following formula.
   delta2 = delta2(2:end);
