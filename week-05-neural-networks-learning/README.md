@@ -13,12 +13,10 @@ Neural Networks: Learning
 #### 1. Cost function
 
 - L = total number of layers in the network
-
-- $s_l$ = number of units (not counting bias unit) in layer $l$
-
+- $s_l$ = number of units in layer $l$  (not counting bias unit)
 - K = number of output units/classes
 
-- $h\Theta(x)_k$ as being a hypothesis that results in the $k^{th}$ output
+
 
 - Cost function for neural networks is going to be a generalization of the one we used for logistic regression.
 
@@ -26,12 +24,15 @@ Neural Networks: Learning
 
   $J(\theta) = - \frac{1}{m} \sum_{i=1}^m [ y^{(i)}\ \log (h_\theta (x^{(i)})) + (1 - y^{(i)})\ \log (1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n \theta_j^2 $
 
+
+
 - For neural networks, it is going to be slightly more complicated:
 
   $J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2$
 
-  - At first, nested summation that loops through the number of output nodes.
-  - In the regularization part, after the square brackets, we must account for multiple theta matrices. The number of columns in our current theta matrix is equal to the number of nodes in our current layer (including the bias unit). The number of rows in our current theta matrix is equal to the number of nodes in the next layer (excluding the bias unit). As before with logistic regression, we square every term.
+  - $h_\Theta(x)_k$ as being a hypothesis that results in the $k^{th}$ output
+  - At first, the double sum simply adds up the logistic regression costs calculated for each cell in the output layer.
+  - In the regularization part, the number of columns in our current theta matrix is equal to the number of nodes in our current layer (including the bias unit). The number of rows in our current theta matrix is equal to the number of nodes in the next layer (excluding the bias unit). As before with logistic regression, we square every term.
   - Note:
     - the double sum simply adds up the logistic regression costs calculated for each cell in the output layer
     - the triple sum simply adds up the squares of all the individual Θs in the entire network.
@@ -43,7 +44,7 @@ Neural Networks: Learning
 
 - Our goal is to compute: $\min_\Theta J(\Theta)$m 
 
-- Minimize $J$ using an optimal set of parameters in $\Theta$. Let's look at the equations to compute the partial derivative of J(Θ): $\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$ 
+- Minimize $J$ using an optimal set of parameters in $\Theta$. Let's look at the equations to compute the partial derivative of J(Θ) and $\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$ 
 
 - To do so, we use the following algorithm:
 
@@ -62,6 +63,8 @@ Neural Networks: Learning
   Example:
 
   Given training example $(x, y)$ 
+
+  Forward propagation:
 
   $a^{(1)} = x$
 
@@ -190,3 +193,5 @@ The cost function $J(\Theta)$ measures how well the neural network fits the trai
 Maximum: $h_\Theta(x^{(i)})$ far from $y^{(i)}$; Minimum: $h_\Theta(x^{(i)})$ $\approx$ $y^{(i)}$ and $J(\Theta)$ is low; Gradient will go the the minimum;
 
 ### III. Application of Neural Networks
+
+Apps in military to drive a car: Autonomous Driving

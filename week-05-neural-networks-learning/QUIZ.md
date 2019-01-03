@@ -88,3 +88,63 @@ Plot $J(\Theta)$ as a function of the number of iterations and make sure it is d
 Correct 
 
 Plot $J(\Theta)$ as a function of the number of iterations to make sure the parameter values are improving in classification accuracy.
+
+------
+
+You are training a three layer neural network and would like to use backpropagation to compute the gradient of the cost function. In the backpropagation algorithm, one of the steps is to update
+
+$\Delta^{(2)}_{ij} := \Delta^{(2)}_{ij} + \delta^{(3)}_i * (a^{(2)})_j $
+
+for every i, ji,j. Which of the following is a correct vectorization of this step?
+
+$\Delta^{(2)} := \Delta^{(2)} + \delta^{(3)} * (a^{(2)})^T $
+
+$\Delta^{(2)} := \Delta^{(2)} + \delta^{(3)} * (a^{(3)})^T $
+
+$\Delta^{(2)} := \Delta^{(2)} + (a^{(3)})^T * \delta^{(2)} $
+
+$\Delta^{(2)} := \Delta^{(2)} + (a^{(2)})^T * \delta^{(3)} $
+
+=> 1
+
+------
+
+Let $J(\theta) = 3 \theta^4 + 4$. Let $\theta=1$, and $\epsilon = 0.01$. Use the formula $\frac{J(\theta + \epsilon) - J(\theta - \epsilon)}{2\epsilon}$ to numerically compute an approximation to the derivative at $\theta=1$. What value do you get? (When $\theta = 1$, the true/exact derivative is $\frac{dJ(\theta)}{d\theta} = 12 .)
+
+11.9988
+
+12
+
+12.0012
+
+6
+
+=> 3
+
+------
+
+Which of the following statements are true? Check all that apply.
+
+For computational efficiency, after we have performed gradient checking toverify that our backpropagation code is correct, we usually disable gradient checking before using backpropagation to train the network.
+
+Computing the gradient of the cost function in a neural network has the same efficiency when we use backpropagation or when we numerically compute it using the method of gradient checking.
+
+Using gradient checking can help verify if one's implementation of backpropagation is bug-free.
+
+Gradient checking is useful if we are using one of the advanced optimization methods (such as in fminunc) as our optimization algorithm. However, it serves little purpose if we are using gradient descent.
+
+=> 1 and 3
+
+------
+
+Which of the following statements are true? Check all that apply.
+
+Suppose you have a three layer network with parameters \Theta^{(1)}Θ(1) (controlling the function mapping from the inputs to the hidden units) and \Theta^{(2)}Θ(2) (controlling the mapping from the hidden units to the outputs). If we set all the elements of \Theta^{(1)}Θ(1) to be 0, and all the elements of \Theta^{(2)}Θ(2) to be 1, then this suffices for symmetry breaking, since the neurons are no longer all computing the same function of the input.
+
+Suppose you are training a neural network using gradient descent. Depending on your random initialization, your algorithm may converge to different local optima (i.e., if you run the algorithm twice with different random initializations, gradient descent may converge to two different solutions).
+
+If we are training a neural network using gradient descent, one reasonable "debugging" step to make sure it is working is to plot J(\Theta)J(Θ) as a function of the number of iterations, and make sure it is decreasing (or at least non-increasing) after each iteration.
+
+If we initialize all the parameters of a neural network to ones instead of zeros, this will suffice for the purpose of "symmetry breaking" because the parameters are no longer symmetrically equal to zero.
+
+=> 1 and 3
