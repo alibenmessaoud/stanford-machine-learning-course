@@ -52,3 +52,9 @@ We can now calculate three separate error values for the three different sets us
 3. Estimate the generalization error using the test set with $J_{test}(\Theta^{(d)})$, (d = polynomial degree);
 
 This way, the degree of the polynomial d has not been trained using the test set.
+
+### Bias vs. Variance
+
+#### a. Diagnosing Bias vs. Variance
+
+
