@@ -33,3 +33,22 @@
   - This gives us a binary 0 or 1 error result based on a misclassification. The average test error for the test set is:
     - Test Error = $m_test \sum_{i=1}^{m_test}=err(h_\Theta(x_test^{(i)}), y_test^{(i)})$
     - This gives us the proportion of the test data that was misclassified.
+
+#### c. Model Selection and Train/Validation/Test Sets
+
+- Learning algorithm fits a training set well, 
+  - It does not mean it is a good hypothesis => Could be over fit = {predictions on the test set would be poor}
+  - Error of hypothesis on the data set of training will be lower than the error on any other data set.
+- Given many models with different polynomial degrees, you can test each degree of polynomial and look at the error result and choose the model of your hypothesis.
+- One way to break down our dataset into the three sets is:
+  - Training set: 60%
+  - Cross validation set: 20%
+  - Test set: 20%
+
+We can now calculate three separate error values for the three different sets using the following method:
+
+1. Optimize the parameters in $\Theta$ using the training set for each polynomial degree.
+2. Find the polynomial degree d with the least error using the cross validation set.
+3. Estimate the generalization error using the test set with $J_{test}(\Theta^{(d)})$, (d = polynomial degree);
+
+This way, the degree of the polynomial d has not been trained using the test set.

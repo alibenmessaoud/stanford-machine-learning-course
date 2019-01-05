@@ -26,3 +26,15 @@ The training error $J(\theta)$ to be **high** and the test error $J_{\text{test}
 
 ------
 
+Consider the model selection procedure where we choose the degree of polynomial using a cross validation set. For the final model (with parameters \thetaθ), we might generally expect $J_{\text{CV}}(\theta)$ To be lower than $J_\text{test}(\theta) $because:
+
+An extra parameter (d, the degree of the polynomial) has been fit to the cross validation set.
+
+An extra parameter (d, the degree of the polynomial) has been fit to the test set.
+
+The cross validation set is usually smaller than the test set.
+
+The cross validation set is usually larger than the test set.
+
+1
+
