@@ -102,34 +102,37 @@ J = J + regularized;
 
 % -------------------------------------------------------------
 
+% Don't know why but we need it; 
+X = [ones(m,1) X];
 
 for t = 1:m
   
-  a1 = X;
-  a1 = [ones(m,1) a1];
-  a1 = [1 ; a1]
+  a1 = X(t,:);
   
   z2 = Theta1 * a1';
   a2 = sigmoid(z2);
-  a2 = [ones(m,1) a2'];
   
-  z3 = Theta2 * a2';
+  % bias this
+  z2 = [1; z2];
+  a2 = [1; a2]; 
+  
+  z3 = Theta2 * a2;
   a3 = sigmoid(z3);
   
   % δ3k = (a3k − yk),
   delta3 = a3 - yk(:, t);
   
   % δ(2) = Θ(2)T * δ(3) .∗ g'(z(2))
-  delta2 = (Theta2 * delta3) .* sigmoidGradient(z2);
+  delta2 = (Theta2' * delta3) .* sigmoidGradient(z2);
   
-  %Accumulate the gradient from this example using the following formula.
+  % Accumulate the gradient from this example using the following formula.
   delta2 = delta2(2:end);
   
+  % ∆ (l) = ∆ (l) + δ (l+1) (a (l) ) T
   Theta1_grad = Theta1_grad + delta2 * a1;
   Theta2_grad = Theta2_grad + delta3 * a2';
   
 endfor
-
 
 % -------------------------------------------------------------
 
