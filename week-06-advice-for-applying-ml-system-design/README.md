@@ -144,7 +144,6 @@ If a learning algorithm is suffering from **high variance**, getting more traini
   - **Increasing $\lambda$:** Fixes high variance.
 
 
-
 - **Diagnosing Neural Networks**
   - A NN with fewer parameters is **prone to underfitting**. It is also **computationally cheaper**.
 
@@ -156,6 +155,12 @@ If a learning algorithm is suffering from **high variance**, getting more traini
 
 - **Model Complexity Effects:**
 
-  - Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
-  - Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
-  - In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well.
+  - Lower-order polynomials (low model complexity):
+    - the model fits poorly consistently.
+    - have high bias and low variance.
+  - Higher-order polynomials (high model complexity):
+    - fit the training data extremely well and the test data extremely poorly. 
+    - have low bias on the training data, but very high variance.
+
+  $\Rightarrow$ Need a model somewhere in between, that can generalize well but also fits the data reasonably well.
+
