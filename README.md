@@ -55,4 +55,9 @@
   - Handling Skewed Data
   - Using Large Data Sets
 
-### 
+###Week 07
+
+- Support Vector Machines
+  - Large Margin Classification
+  - Kernels
+  - SVMs in Practice 
