@@ -69,10 +69,22 @@ Non-linear decision boundary:
 
 We can learn pretty complex non-linear decision boundary, like what is just drew up where we predict positive when we're close to either one of the two landmarks. And we predict negative when we're very far away from any of the landmarks. And so this is part of the idea of kernels of and how we use them with the support vector machine, which is that we define these extra features using landmarks and similarity functions to learn more complex nonlinear classifiers.
 
+![](./img/kernal-5.png)
 
+Change x by f.
 
-
+- SVM parameters:
+  - C
+    - Large: Lower bias, high variance. small $\lambda$
+    - Small: High bias, low variance. large $\lambda$
+  - $\sigma²$
+    - Large: Features $f_i$ vary more smoothly + Higher bias, lower variance. --^--
+    - Small: Features $f_i$ vary less smoothly + lower bias, high variance. \_/\\_ 
 
 ### III. SVMs in practice
 
-###   
+![](./img/fsvm-1.png)
+
+![](./img/fsvm-2.png)
+
+![](./img/fsvm-3.png) 
