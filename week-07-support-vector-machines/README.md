@@ -51,6 +51,26 @@ It is about C value;
 
 ### II. Kernels
 
+Non-linear decision boundary: 
+
+- $h_\theta(x) = 1 \text{ if polynomial } \theta_0 + \theta_1x_1 + .. \ge 0$ 
+
+- which can be written as $\theta_0 + \theta_1f_1 + .. $ where $f_1 = x_1, ...$ 
+
+  $\Rightarrow$ Question: is a better or different choice of features $f_1, f_2, ..$ 
+
+![](./img/kernal-1.png)
+
+![](./img/kernal-2.png)
+
+![](./img/kernal-3.png)
+
+![](./img/kernal-4.png)
+
+We can learn pretty complex non-linear decision boundary, like what is just drew up where we predict positive when we're close to either one of the two landmarks. And we predict negative when we're very far away from any of the landmarks. And so this is part of the idea of kernels of and how we use them with the support vector machine, which is that we define these extra features using landmarks and similarity functions to learn more complex nonlinear classifiers.
+
+
+
 
 
 ### III. SVMs in practice
