@@ -164,3 +164,75 @@ If a learning algorithm is suffering from **high variance**, getting more traini
 
   $\Rightarrow$ Need a model somewhere in between, that can generalize well but also fits the data reasonably well.
 
+## II. Machine Learning System Design
+
+### 1. Building a Spam Classifier
+
+#### a. Prioritizing What to Work On
+
+System Design Example:
+
+- For an email, construct a vector for email. 
+- The vector entries represents words in an email. 
+- We have a set of bad words 10,000 to 50,000 
+- If a word is to be found in the email, assign its respective entry a 1, else if it is not found, that entry would be a 0.
+- X vectors ready $\Rightarrow$ train our algorithm and finally, we could use it to classify if an email is a spam or not.
+
+Improve the accuracy of this classifier?
+
+- Collect lots of data ("honeypot" project)
+- Develop sophisticated features (email header data)
+- Develop algorithms to process your input in different ways (recognizing misspellings in spam).
+
+#### b. Error Analysis
+
+The recommended approach to solving ML problems is to:
+
+- Start with a simple algorithm, implement it quickly, and test it early on your cross validation data.
+
+- Plot learning curves to decide if more data, more features, etc. are likely to help.
+
+- Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.
+
+- Example
+
+  - Assume that we have 500 emails and our algorithm misclassifies a 100 of them. Manually analyze the 100 emails and categorize them. Try to come up with new cues and features that would help us classify these 100 emails. Hence, if most of our misclassified emails are those which try to steal passwords, then we could find some features that are particular to those emails and add them to our model. Also, see how classifying each word according to its root (do stemming, lowercase, etc) changes our error rate. 
+
+    $\Rightarrow$ Perform algorithm using stemmed and non-stemmed words to see error on the CV data.
+
+- It is very important to get error results as a single, numerical value. Otherwise it is difficult to assess your algorithm's performance: 
+
+  - Use stemming (treating the same word with different forms (fail/failing/failed) as one word (fail)):
+    - get a 3% error rate instead of 5%, then we should definitely add it to our model. 
+  - Distinguish between upper case and lower case letters: 
+    - getting a 3.2% error rate instead of 3%, then we should avoid using this new feature. 
+
+  $\Rightarrow$ try new things
+
+### 2. Handling Skewed Data
+
+#### Error metrics
+
+Precision/ Recall
+
+y = 1; presence of rare class that we want to detect
+
+$Precision=\frac{True positives}{\text{nb predicted as positive}} = \frac{True positives}{True positives \text{ + } False positives}$
+
+$Recall=\frac{True positives} {\text{nactual positives}}= \frac{True positives}{True positives \text{ + }False negatives}$
+
+![](./img/tfmetric-recall-precision.png)
+
+![](./img/Tradingoffprecisionandrecall.png)
+
+![](./img/f1score.png)
+
+
+
+### 3. Using Large Data Sets
+
+![](./img/lds1.png)
+
+![](./img/lds2.png)
+
+![](./img/lds3.png)

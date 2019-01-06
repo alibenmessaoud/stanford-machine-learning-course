@@ -81,3 +81,20 @@ No, because it is currently suffering from high bias, so adding hidden units is 
 No, because it is currently suffering from high variance, so adding hidden units is unlikely to help.
 
 4.
+
+------
+
+Why is the recommended approach to perform error analysis using the cross validation data used to compute $J_\text{CV}(\theta)$ rather than the test data used to compute $J_\text{test}(\theta)$?
+
+The cross validation data set is usually large.
+
+This process will give a lower error on the test set.
+
+If we develop new features by examining the test set, then we may end up choosing features that work well specifically for the test set, so Jtest(θ) is no longer a good estimate of how well we generalize to new examples.
+
+Correct 
+
+Doing so is less likely to lead to choosing an excessive number of features.
+
+------
+
