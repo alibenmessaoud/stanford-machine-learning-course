@@ -38,3 +38,46 @@ The cross validation set is usually larger than the test set.
 
 1
 
+------
+
+Suppose you have a classification problem. The (misclassification) error is defined as $\frac{1}{m}\sum_{i=1}^m\text{err}(h_\theta(x^{(i)}),y^{(i)})$, and the cross validation (misclassification) error is similarly defined, using the cross validation examples $(x_\text{cv}^{(1)}, y_\text{cv}^{(1)}),\ldots,(x_\text{cv}^{(m_\text{cv})}, y_\text{cv}^{(m_\text{cv})})$. Suppose your training error is 0.10, and your cross validation error is 0.30. What problem is the algorithm most likely to be suffering from?
+
+High bias (overfitting)
+
+High bias (underfitting)
+
+High variance (overfitting)
+
+Correct 
+
+High variance (underfitting)
+
+------
+
+In which of the following circumstances is getting more training data likely to significantly help a learning algorithm’s performance?
+
+Algorithm is suffering from high bias.
+
+Algorithm is suffering from high variance.
+
+Correct 
+
+$J_\text{CV}(\theta)$ (cross validation error) is much larger than $J_\text{train}(\theta)$ (training error).
+
+Correct 
+
+$J_\text{CV}(\theta)$ (cross validation error) is about the same as $J_\text{train}(\theta)$ (training error).
+
+------
+
+Suppose you fit a neural network with one hidden layer to a training set. You find that the cross validation error $J_\text{CV}(\theta)$ is much larger than the training error J_\text{train}(\theta)Jtrain(θ). Is increasing the number of hidden units likely to help?
+
+Yes, because this increases the number of parameters and lets the network represent more complex functions.
+
+Yes, because it is currently suffering from high bias.
+
+No, because it is currently suffering from high bias, so adding hidden units is unlikely to help.
+
+No, because it is currently suffering from high variance, so adding hidden units is unlikely to help.
+
+4.
