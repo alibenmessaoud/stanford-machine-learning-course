@@ -17,9 +17,11 @@ sim = 0;
 %
 
 
+sim = exp(-1 * sum( (x1 - x2).^2 ) / (2 * sigma^2))
 
-
-
+% sim =  0.31062
+% ==== Processed Email ====
+% the quick brown fox jump over the lazi dog
 
 % =============================================================
     
