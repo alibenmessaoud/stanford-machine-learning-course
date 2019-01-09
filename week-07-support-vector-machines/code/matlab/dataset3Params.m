@@ -24,8 +24,20 @@ sigma = 0.3;
 %
 
 
+testData = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
 
 
+for indexC = 1: length(testData),
+    for indexSigma = 1: length(testData),
+      
+      testC = testData(indexC);
+      testSigma = testData(indexSigma);
+      
+      model = ?
+      predictions = svmPredict(model, Xval);
+      
+    endfor
+endfor    
 
 
 
