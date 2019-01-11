@@ -55,9 +55,15 @@
   - Handling Skewed Data
   - Using Large Data Sets
 
-###Week 07
+### Week 07
 
 - Support Vector Machines
   - Large Margin Classification
   - Kernels
   - SVMs in Practice 
+
+### Week 08
+
+- Unsupervised Learning
+	- Clustering
+	- Dimensionality Reduction 
