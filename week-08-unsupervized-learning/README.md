@@ -41,3 +41,17 @@ $u_{c^{(i)}}$ = cluster centroid of cluster to which example $x^{(i)}$ has been 
 
 $J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) = 1/m \sum^{m}_{i=1} || x^{(i)} - u_{c^{(i)}} ||²$ $= min_{c^{(1)}, .. , c^{(m)}, u_1, .. , u_k} J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) $
 
+#### 4. Random initialization
+
+$K \lt m$ as $K$: number of clusters ; $m$: number of training examples
+
+Pick random $K$ training examples
+
+Set $u_1, ..; u_K$ equal to these examples
+
+Cluster and re cluster the clustered clusters to find local optima
+
+Compute: cost function (distortion) $J(c^{(1)}, c^{(2)}, .. , u_1, u_K)$
+
+Pick clustering that gave lowest cost $J$
+
