@@ -39,7 +39,5 @@ $u_k$ = cluster centroid $k$
 
 $u_{c^{(i)}}$ = cluster centroid of cluster to which example $x^{(i)}$ has been assigned
 
-$J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) = 1/m \sum^{m}_{i=1} || x^{(i)} - u_{c^{(i)}} ||²$
-
-$= min_{c^{(1)}, .. , c^{(m)}, u_1, .. , u_k} J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) $
+$J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) = 1/m \sum^{m}_{i=1} || x^{(i)} - u_{c^{(i)}} ||²$ $= min_{c^{(1)}, .. , c^{(m)}, u_1, .. , u_k} J(c^{(1)}, .. , c^{(m)}, u_1, .. , u_k) $
 
