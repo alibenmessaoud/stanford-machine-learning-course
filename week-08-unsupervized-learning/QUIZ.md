@@ -30,3 +30,16 @@ Correct
 
 Set every element of $\mu_i\in\mathbb{R}^n$ to a random value between $-\epsilon$ and $\epsilon$, for some small $ \epsilon$.
 
+------
+
+Suppose you run k-means using k = 3 and k = 5. You find that the cost function J is much higher for k = 5 than for k = 3. What can you conclude?
+
+This is mathematically impossible. There must be a bug in the code.
+
+The correct number of clusters is k = 3.
+
+In the run with k = 5, k-means got stuck in a bad local minimum. You should try re-running k-means with multiple random initializations. 
+
+Correct
+
+In the run with k = 3, k-means got lucky. You should try re-running k-means with k = 3 and different random initializations until it performs no better than with k = 5.

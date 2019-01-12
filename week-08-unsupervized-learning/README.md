@@ -55,3 +55,10 @@ Compute: cost function (distortion) $J(c^{(1)}, c^{(2)}, .. , u_1, u_K)$
 
 Pick clustering that gave lowest cost $J$
 
+#### 5. Choosing the Number of Clusters
+
+- Rule for the right $K$
+  - Elbow method: Get a chart of  $J$ |__ $K$  
+  - If the line chart resembles an arm \\__, then the “elbow” (the point of inflection on the curve) is a good indication that the underlying model fits best at that point.
+- Can choose by hand and see
+
