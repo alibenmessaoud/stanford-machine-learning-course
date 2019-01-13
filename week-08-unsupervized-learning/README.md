@@ -74,3 +74,4 @@ Pick clustering that gave lowest cost $J$
 
 #### 2. Visualization
 
+Dimensionality reduction to plot and visualize data
