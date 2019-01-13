@@ -43,3 +43,51 @@ In the run with k = 5, k-means got stuck in a bad local minimum. You should try 
 Correct
 
 In the run with k = 3, k-means got lucky. You should try re-running k-means with k = 3 and different random initializations until it performs no better than with k = 5.
+
+------
+
+For which of the following tasks might K-means clustering be a suitable algorithm? Select all that apply.
+
+x Given a database of information about your users, automatically group them into different market segments.
+
+x Given sales data from a large number of products in a supermarket, figure out which products tend to form coherent groups (say are frequently purchased together) and thus should be put on the same shelf.
+
+Given historical weather records, predict the amount of rainfall tomorrow (this would be a real-valued output)
+
+Given sales data from a large number of products in a supermarket, estimate future sales for each of these products.
+
+------
+
+Suppose we have three cluster centroids $\mu_1 =[1 2]$, $\mu_2 =[−3 0] $ and $\mu_3 =[42]$. Furthermore, we have a training example $x^{(i)} =[−21]$. After a cluster assignment step, what will $c^{(i)}$ be?
+
+$c^{(i)}$ is not assigned
+
+$c^{(i)} = 2$
+
+$c^{(i)} = 1$
+
+$c^{(i)} = 3$
+
+------
+
+K-means is an iterative algorithm, and two of the following steps are repeatedly carried out in its inner-loop. Which two?
+
+The cluster centroid assignment step, where each cluster centroid \mu_iμi is assigned (by setting $c^{(i)}$) to the closest training example $x^{(i)}$.
+
+Move each cluster centroid $\mu_k$, by setting it to be equal to the closest training example $x^{(i)}$
+
+x Move the cluster centroids, where the centroids $\mu_k$ are updated.
+
+x The cluster assignment step, where the parameters $c^{(i)}$ are updated.
+
+------
+
+Suppose you have an unlabeled dataset $\{x^{(1)}, \ldots, x^{(m)}\}$. You run K-means with 50 different random initializations, and obtain 50 different clusterings of the data. What is the recommended way for choosing which one of these 50 clusterings to use?
+
+x Use the elbow method.
+
+Plot the data and the cluster centroids, and pick the clustering that gives the most "coherent" cluster centroids.
+
+Manually examine the clusterings, and pick the best one.
+
+Compute the distortion function $J(c^{(1)}, \ldots, c^{(m)}, \mu_1, \ldots,\mu_k),$ and pick the one that minimizes this.
