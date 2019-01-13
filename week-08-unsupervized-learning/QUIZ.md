@@ -91,3 +91,20 @@ Plot the data and the cluster centroids, and pick the clustering that gives the 
 Manually examine the clusterings, and pick the best one.
 
 Compute the distortion function $J(c^{(1)}, \ldots, c^{(m)}, \mu_1, \ldots,\mu_k),$ and pick the one that minimizes this.
+
+------
+
+Suppose we apply dimensionality reduction to a dataset of m examples $\{x^{(1)}, x^{(2)}, \dots, x^{(m)}\}$, where $x^{(i)}\in\mathbb{R}^n$ . As a result of this, we will get out:
+
+A lower dimensional dataset $\{z^{(1)}, z^{(2)},\dots, z^{(k)}\}$ of k examples where $k\leq n$.
+
+A lower dimensional dataset $\{z^{(1)}, z^{(2)},\dots, z^{(k)}\}$ of $k$ examples where $k > n$.
+
+A lower dimensional dataset $\{z^{(1)}, z^{(2)},\dots, z^{(m)}\}$ of m examples where $z^{(i)} \in \mathbb{R}^k$ for some value of $k$ and $k\leq n$.
+
+Correct 
+
+A lower dimensional dataset $\{z^{(1)}, z^{(2)},\dots, z^{(m)}\}$ of m examples where $z^{(i)} \in \mathbb{R}^k$ for some value of $k$ and $k > n$.
+
+------
+

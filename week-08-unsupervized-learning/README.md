@@ -66,6 +66,11 @@ Pick clustering that gave lowest cost $J$
 
 #### 1. Data compression
 
-
+- Dimensionality reduction = Data compression
+  - Reduce data from 2D to 1D
+    - $x1, x2$ -> $z1 =$  single line with projection of points.
+  - Reduce from 3D to 2D
+    - $x1, x2, x3$ -> $z1, z2$
+  - ​
 
 #### 2. Visualization
