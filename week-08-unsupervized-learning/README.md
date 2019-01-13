@@ -75,3 +75,50 @@ Pick clustering that gave lowest cost $J$
 #### 2. Visualization
 
 Dimensionality reduction to plot and visualize data
+
+### III. Principal component analysis: PCA
+
+#### 1. Problem formulation
+
+- Pass from 2D to 1D
+
+- Find a direction (vector) to project data on to minimize projection error
+
+  =>
+
+- Pass from nD to kD
+
+- Find k directions (vectors $u^{(1)}, ... u^{(k)}$) to project data on to minimize projection error
+
+PCA is not linear regression: in linear regression, we plot lines vertically on the fitting line. In PCA, we plot lines perpendicularly on the fitting line. 
+
+#### 2. Algorithm
+
+- training set $x^{(1)} ... x^{(m)}$
+
+- Data preprocessing
+
+  - Feature scaling// normalization
+
+    $\mu_j = 1/m \sum_{i=1}^{m} x_j^{(i)}$
+
+    replace each $x_j^{(i)}$ with $x_j - \mu_j$ 
+
+- PCA: 
+
+  - 3Dto2D; 
+    - $u1$ and $u2$
+    - $z$ = $z1$ and $z2$
+  - 2Dto1D
+    - $u1$ as a vector
+    - $z1$ straight line
+
+  Compute eigenvectors
+
+  ```
+   [u,s,v] = svd(sigma)
+  ```
+
+  ​
+
+  ​
