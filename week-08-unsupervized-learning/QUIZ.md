@@ -108,3 +108,12 @@ A lower dimensional dataset $\{z^{(1)}, z^{(2)},\dots, z^{(m)}\}$ of m examples 
 
 ------
 
+Suppose you have a dataset $\{x^{(1)}, x^{(2)}, \dots, x^{(m)}\}$ where $x^{(i)}\in\mathbb{R}^n$. In order to visualize it, we apply dimensionality reduction and get $\{z^{(1)}, z^{(2)}, \dots, z^{(m)}\}$ where $z^{(i)}\in\mathbb{R}^k$ is k-dimensional. In a typical setting, which of the following would you expect to be true? Check all that apply.
+
+k > n
+
+Correct  k ≤ n
+
+k ≥ 4
+
+Correct k = 2 or k = 3 (since we can plot 2D or 3D data but don’t have ways to visualize higher dimensional data)
