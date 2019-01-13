@@ -27,10 +27,19 @@ centroids = zeros(K, n);
 %
 
 
+for k = 1: K
+  
+    xPosition = find(idx == k);
+    
+    if(size(xPosition, 1) > 0)
+    
+      subX = X(xPosition,:);
+      average = mean(subX);
+      centroids(k, :) = average;
+      
+    end
 
-
-
-
+end
 
 
 % =============================================================
