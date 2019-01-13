@@ -119,6 +119,9 @@ PCA is not linear regression: in linear regression, we plot lines vertically on 
    [u,s,v] = svd(sigma)
   ```
 
-  ​
 
-  ​
+
+#### 3. Applying PCA
+
+![](./img/reconstr.png)
+
