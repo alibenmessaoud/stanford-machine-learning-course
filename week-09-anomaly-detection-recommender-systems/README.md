@@ -51,8 +51,19 @@
 
 
 
-#### 2. Anomaly Detection System
+#### 2. Building Anomaly Detection System
+
+![](./img/ano-detection-algo.png) 
 
 
 
+![](./img/ano-detection-vs-superv-leanr.png) 
+
+![](./img/ano-detection-vs-superv-leanr-apps.png) 
+
+#### 3. Choosing What Features to Use
+
+![](./img/feature-to-use.png)
+
+![](./img/new-feature.png) 
 
