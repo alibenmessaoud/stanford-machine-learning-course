@@ -67,3 +67,39 @@
 
 ![](./img/new-feature.png) 
 
+### II. Recommender Systems
+
+#### 1. Predicting Movie Ratings
+
+![](./img/movie-sys.png)
+
+#### 2. Content Based Recommendations
+
+![](./img/how-to-recommend.png)
+
+![](./img/prob-formulation-rec-syst.png)
+
+![](./img/optim-objective.png) 
+
+![](./img/gradient-objective.png)
+
+#### 4. Collaborative Filtering
+
+![](./img/problem.png)
+
+![](./img/optz-algo.png)
+
+![](./img/coolab-filt.png)
+
+#### 2. Collaborative Filtering Algorithm
+
+![](./img/collab-fil-algo-full.png)
+
+![](./img/alg-full-additionnal.png)
+
+#### 3. Vectorization: Low Rank Matrix Factorization
+
+![](./img/vector-collab-filtr.png)
+
+![](./img/find-related-movies.png)
+

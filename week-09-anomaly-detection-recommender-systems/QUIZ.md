@@ -42,3 +42,14 @@ Try changing $\epsilon$.
 
 ------
 
+In the algorithm we described, we initialized $x^{(1)}, \dots, x^{(n_m)}$  and $\theta^{(1)},\dots,\theta^{(n_u)}$ to small random values. Why is this?
+
+This step is optional. Initializing to all 0’s would work just as well.
+
+Random initialization is always necessary when using gradient descent on any problem.
+
+This ensures that $x^{(i)} \neq \theta^{(j)}$ for any $i,j$.
+
+This serves as symmetry breaking (similar to the random initialization of a neural network’s parameters) and ensures the algorithm learns features $x^{(1)}, \dots, x^{(n_m)}$ that are different from each other.
+
+Correct 
