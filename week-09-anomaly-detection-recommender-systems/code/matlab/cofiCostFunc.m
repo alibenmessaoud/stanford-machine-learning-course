@@ -41,18 +41,18 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+J_part1 = 1/2 * sum(sum(R .* (X * Theta' - Y) .^ 2));
+J_part2 = lambda/2 * sum(sum(Theta .^ 2));
+J_part3 = lambda/2 * sum(sum(X .^ 2));
 
+J = J_part1 + J_part2 + J_part3;
 
+% Cost at loaded parameters: 22.224604
+% (this value should be about 22.22)
 
+X_grad = (X*Theta' - Y) .* R * Theta + lambda * X;
 
-
-
-
-
-
-
-
-
+Theta_grad = ((X*Theta' - Y) .* R)' * X + lambda * Theta;
 
 
 % =============================================================
