@@ -97,3 +97,7 @@
   - Sliding windows
   - Data and artificial data
   - Ceiling Analysis
+
+
+
+You passed this course! Your grade is 93.30%.
